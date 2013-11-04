@@ -25,7 +25,7 @@ The object needs to be able to respond to the selector `bounds`to be usable.
 To add an event to the trajectory, use :
 ```
 [myPopoverController 	addEventWithObject: myTextField
-			withText:@"Click this text field. CLose this window to display the next one."];
+			andText:@"Click this text field. CLose this window to display the next one."];
 ```
 
 Then to launch the Tutorial, call:
