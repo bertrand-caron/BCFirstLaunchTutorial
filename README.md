@@ -28,7 +28,7 @@ To add an event to the trajectory, use :
 Then to launch the Tutorial, call:
 ```
 [myPopoverController launchTutorial];
-``
+```
 Limitations
 -----------
 
