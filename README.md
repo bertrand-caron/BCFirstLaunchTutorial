@@ -13,7 +13,7 @@ Usage
 ###Init the controller
 ```
 myPopoverController = [[BCFirstLaunchTutorial alloc] initFromXIB];
-``
+```
 
 ###Create Tutorial Trajectory
 The tutorial will be made of a succession of `NSPopover`s appearing, pointing to objects and displaying a text of your choosing.
