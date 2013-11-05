@@ -1,8 +1,7 @@
 BCFirstLaunchTutorial
 =====================
 
-![Snapshot3](https://raw.github.com/bertrand-caron/BCFirstLaunchTutorial/master/Snapshots/Snapshot3.png)
-![Snapshot4](https://raw.github.com/bertrand-caron/BCFirstLaunchTutorial/master/Snapshots/Snapshot4.png)
+![Snapshot5](https://raw.github.com/bertrand-caron/BCFirstLaunchTutorial/master/Snapshots/Snapshot5.png)
 
 Installation
 ------------
