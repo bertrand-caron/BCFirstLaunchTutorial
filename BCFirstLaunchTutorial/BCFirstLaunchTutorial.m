@@ -55,6 +55,31 @@ Main Method called by the programmer to set up the tutorial
     }
     currentEvent+=1;
     [self resize];
+    
+    //if this is the last event
+    if (currentEvent ==[popoverObjects count])
+    {
+        //Add extra padding at the bottom of the popover's view
+        [popover setContentSize:NSMakeSize([popover contentSize].width, [popover contentSize].height+20)];
+        //Translate up the NSScrollView
+        [[ [popoverTextView superview]superview] setFrameOrigin:
+         NSMakePoint([[popoverTextView superview]superview].frame.origin.x,
+                     [[popoverTextView superview]superview].frame.origin.y+20)];
+        
+        //Add a "do not show again" check box
+        NSButton* but =[[NSButton alloc] initWithFrame:NSMakeRect(5, 5, 125, 15)] ;
+        [but setTitle:@"Do Not Show Again"];
+        [but setButtonType:NSSwitchButton];
+        [but setBezelStyle:0];
+        [but setBordered:NO];
+        [but setAction:@selector(writeToUserDefaults)];
+        [but setFont:[NSFont fontWithName:@"Arial" size:9.0]];
+        [but.cell setControlSize:NSMiniControlSize];
+        
+        //Add the button tot the view"s subviews
+        [self.view addSubview:but];
+    }
+    
 }
 
 /**
@@ -64,6 +89,18 @@ Close it, and calls the next Popover Event
 -(IBAction)closePopover:(id)sender
 {
     [[self popover] close];
+    
+    //Undo the extra padding at the bottom of the popover's view
+    //if the was the last event
+    if (currentEvent ==[popoverObjects count])
+    {
+        [popover setContentSize:NSMakeSize([popover contentSize].width, [popover contentSize].height-20)];
+        //Translate up the NSScrollView
+        [[ [popoverTextView superview]superview] setFrameOrigin:
+         NSMakePoint([[popoverTextView superview]superview].frame.origin.x,
+                     [[popoverTextView superview]superview].frame.origin.y-20)];
+    }
+    
     [self proceedToNextPopoverEvent];
 }
 
@@ -100,6 +137,15 @@ Close it, and calls the next Popover Event
     
     //And then the popover
     [popover setContentSize:NSMakeSize([popover contentSize].width, scroll.frame.size.height+33)]; //Magic Number, depends on your customView dimensions
+}
+
+/**
+Method called when the user clicks on the "Do not show again" dialog at the end of the tutorial
+ */
+-(void)writeToUserDefaults
+{
+    [self closePopover:self];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"dontShowTutorial"];
 }
 
 @end
