@@ -92,6 +92,19 @@ Close it, and calls the next Popover Event
     float textViewHeight = [[popoverTextView layoutManager] boundingRectForGlyphRange:range
                                            inTextContainer:container].size.height;
     
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\n" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString:[popoverTextView string] options:0 range:NSMakeRange(0, [[popoverTextView string] length])];
+    //textViewHeight=textViewHeight+6*numberOfMatches;
+    /*while (range.location != NSNotFound)
+    {   //Add extra padding if new line character to prevent clipping, empirically needed
+        textViewHeight=textViewHeight+2;
+    }*/
+    
+    //<DEBUG>
+    NSLog(@"textViewHeight : %f",textViewHeight);
+    NSLog(@"[layout usedRectForTextContainer:container] : %@",NSStringFromRect([[popoverTextView layoutManager]usedRectForTextContainer:[popoverTextView textContainer]]));
+    //</DEBUG>
+    
     //Fit the scroll View
     [scroll setFrame:(NSRect){
         [scroll frame].origin.x,[scroll frame].origin.y,
