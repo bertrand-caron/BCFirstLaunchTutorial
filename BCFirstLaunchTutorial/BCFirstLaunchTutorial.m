@@ -54,6 +54,7 @@ Main Method called by the programmer to set up the tutorial
         [popoverTextView setString:[popoverTexts objectAtIndex:currentEvent]];
     }
     currentEvent+=1;
+    [self resize];
 }
 
 /**
@@ -64,6 +65,41 @@ Close it, and calls the next Popover Event
 {
     [[self popover] close];
     [self proceedToNextPopoverEvent];
+}
+
+/**
+ 
+*/
+-(void)resize
+{
+    //Spawn the layout and container for convenience
+    NSLayoutManager* layout = [popoverTextView layoutManager];
+    NSTextContainer* container = [popoverTextView textContainer];
+    
+    NSScrollView* scroll = (NSScrollView*)[[popoverTextView superview ]superview];
+    
+    //Set a 0 padding for the container
+    [container setLineFragmentPadding:0.0];
+    
+    //Set the font and size for the container
+    [[popoverTextView textStorage] addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Arial" size:11.0]
+                        range:NSMakeRange(0, [[popoverTextView textStorage] length])];
+    
+    //Get glyph range for boundingRectForGlyphRange:
+    NSRange range = [[popoverTextView layoutManager] glyphRangeForTextContainer:container];
+    
+    //Finally get the height
+    float textViewHeight = [[popoverTextView layoutManager] boundingRectForGlyphRange:range
+                                           inTextContainer:container].size.height;
+    
+    //Fit the scroll View
+    [scroll setFrame:(NSRect){
+        [scroll frame].origin.x,[scroll frame].origin.y,
+        [scroll frame].size.width,textViewHeight+4 		//Magic Number, depends on your font (I guess)
+    }];
+    
+    //And then the popover
+    [popover setContentSize:NSMakeSize([popover contentSize].width, scroll.frame.size.height+33)]; //Magic Number, depends on your customView dimensions
 }
 
 @end

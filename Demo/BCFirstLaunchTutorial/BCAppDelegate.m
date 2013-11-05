@@ -26,7 +26,7 @@
     [popoverController  addNewEventWithObject:button
                                       andText:@"This is my Button. It does amazing things."];
     [popoverController  addNewEventWithObject:searchField
-                                      andText:@"This is my Search Field. I'd like the Popover to have a dynamic height."];
+                                      andText:@"This is my Search Field. I'd like the Popover to have a dynamic height. It now does."];
     [popoverController  addNewEventWithObject:textField
                                       andText:@"This is the last help bubble. The tutorial will be done when you close it.You can always launch it again."];
     
