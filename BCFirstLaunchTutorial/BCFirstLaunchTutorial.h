@@ -17,6 +17,7 @@
 @property  IBOutlet NSPopover* popover;
 @property  IBOutlet NSTextView* popoverTextView;
 @property  IBOutlet NSView* popoverView;
+@property IBOutlet NSButton* button;
 
 -(id)initFromXib;
 -(void)addNewEventWithObject:(id)anObject andText:(NSString*)aText;

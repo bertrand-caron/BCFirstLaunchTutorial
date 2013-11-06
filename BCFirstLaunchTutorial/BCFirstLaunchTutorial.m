@@ -10,9 +10,10 @@
 
 @implementation BCFirstLaunchTutorial
 
-@synthesize currentEvent,popoverObjects,popoverTexts,popoverTextView,popover,popoverView;
+@synthesize currentEvent,popoverObjects,popoverTexts,popoverTextView,popover,popoverView,button;
 
 
+#pragma mark - Init
 /**
 Only way to init the PopoverController
 */
@@ -68,16 +69,36 @@ Main Method called by the programmer to set up the tutorial
         
         //Add a "do not show again" check box
         NSButton* but =[[NSButton alloc] initWithFrame:NSMakeRect(5, 5, 125, 15)] ;
-        [but setTitle:@"Do Not Show Again"];
-        [but setButtonType:NSSwitchButton];
+        //[but setTitle:@"Do Not Show Again"];
+        button=but;
+        [but setButtonType:NSHelpButtonBezelStyle];
         [but setBezelStyle:0];
         [but setBordered:NO];
         [but setAction:@selector(writeToUserDefaults)];
-        [but setFont:[NSFont fontWithName:@"Arial" size:9.0]];
+        //[but setFont:[NSFont fontWithName:@"Arial" size:9.0]];
         [but.cell setControlSize:NSMiniControlSize];
+        [but setAttributedTitle:
+         [[NSAttributedString alloc] initWithString:@"Do not show again"
+                attributes:[NSDictionary dictionaryWithObjectsAndKeys:
+             [NSFont fontWithName:@"Arial" size:9.0], NSFontAttributeName,
+                    [NSColor headerColor], NSForegroundColorAttributeName,
+                nil
+                ]
+          ]];
         
         //Add the button tot the view"s subviews
         [self.view addSubview:but];
+        
+        NSTrackingArea* trackingArea = [[NSTrackingArea alloc] initWithRect:[but frame]
+                                                            options:(
+                                                                     NSTrackingInVisibleRect
+                                                            //      | NSTrackingEnabledDuringMouseDrag
+                                                                     | NSTrackingMouseEnteredAndExited
+                                                                     | NSTrackingActiveAlways
+                                                                     )
+                                                                      owner:self userInfo:nil];
+        
+        [but addTrackingArea:trackingArea];
     }
     
 }
@@ -139,6 +160,24 @@ Close it, and calls the next Popover Event
     [popover setContentSize:NSMakeSize([popover contentSize].width, scroll.frame.size.height+33)]; //Magic Number, depends on your customView dimensions
 }
 
+#pragma mark - "Do not Show Again " Label Customization via NSTrackingArea
+- (void) mouseEntered:(NSEvent*)theEvent {
+    //Set text color
+    NSMutableAttributedString * attString =[[NSMutableAttributedString alloc] initWithAttributedString:[button attributedTitle]];
+    [attString removeAttribute:NSForegroundColorAttributeName range:NSMakeRange(0,[attString string].length)];
+    [attString addAttribute:NSForegroundColorAttributeName value:[NSColor darkGrayColor] range:NSMakeRange(0,[attString string].length)];
+    [button setAttributedTitle:attString];
+}
+
+- (void) mouseExited:(NSEvent*)theEvent {
+    //Set text color
+    NSMutableAttributedString * attString =[[NSMutableAttributedString alloc] initWithAttributedString:[button attributedTitle]];
+    [attString removeAttribute:NSForegroundColorAttributeName range:NSMakeRange(0,[attString string].length)];
+    [attString addAttribute:NSForegroundColorAttributeName value:[NSColor headerColor] range:NSMakeRange(0,[attString string].length)];
+    [button setAttributedTitle:attString];
+}
+
+#pragma mark - User Default Interactions
 /**
 Method called when the user clicks on the "Do not show again" dialog at the end of the tutorial
  */
