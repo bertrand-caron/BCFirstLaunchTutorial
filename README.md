@@ -6,8 +6,7 @@ BCFirstLaunchTutorial
 Installation
 ------------
 
-- Drag the five files from the BCFirstTimeLaunch directory (BCFirstLaunchTutorial.*, PopoverView.xib, BCFadedInButton.*) to your project
-
+- Drag the five files from the BCFirstTimeLaunch directory (BCFirstLaunchTutorial.\*, PopoverView.xib, BCFadedInButton.\*) to your project.
 
 Usage
 -----
@@ -24,13 +23,23 @@ The object needs to be able to respond to the selector `bounds`to be usable.
 To add an event to the trajectory, use :
 ```
 [myPopoverController 	addEventWithObject: myTextField
-			andText:@"Click this text field. CLose this window to display the next one."];
+			andText:@"Click this text field. Close this window to display the next one."];
 ```
 
-Then to launch the Tutorial, call:
+Then to launch the Tutorial, simply call:
 ```
-[myPopoverController launchTutorial];
+[myPopoverController proceedToNextPopoverEvent];
 ```
+
+To go to a given event in the trajectory, use the property `@property int currentEvent` (NB : Numbered From 0 !)
+For instance : 
+```
+[myPopoverController setCurrentEvent:0]; 		//Reset the inner loop to the first event 
+[myPopoverController proceedToNextPopoverEvent];	//Then relaunch it
+```
+
+To abort the tutorial : Wait For It !
+
 Limitations
 -----------
 
