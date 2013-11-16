@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BCFadedInButton.h"
 
 @interface BCFirstLaunchTutorial : NSViewController
 
@@ -17,7 +18,7 @@
 @property  IBOutlet NSPopover* popover;
 @property  IBOutlet NSTextView* popoverTextView;
 @property  IBOutlet NSView* popoverView;
-@property IBOutlet NSButton* button;
+@property IBOutlet BCFadedInButton* button;
 
 -(id)initFromXib;
 -(void)addNewEventWithObject:(id)anObject andText:(NSString*)aText;

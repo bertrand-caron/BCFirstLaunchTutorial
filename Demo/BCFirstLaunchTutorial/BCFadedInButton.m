@@ -16,8 +16,16 @@
     if (self) {
         // Initialization code here.
         [self addTrackingArea:[[NSTrackingArea alloc] initWithRect:[self frame] options:NSTrackingInVisibleRect| NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways owner:self userInfo:nil]];
+        [self setAlphaValue:0.5];
     }
     return self;
+}
+
+
+-(void)awakeFromNib
+{
+    [self addTrackingArea:[[NSTrackingArea alloc] initWithRect:[self frame] options:NSTrackingInVisibleRect| NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways owner:self userInfo:nil]];
+    [self setAlphaValue:0.5];
 }
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -29,12 +37,11 @@
 
 - (void)mouseEntered:(NSEvent *)theEvent
 {
-    [[self animator]setAlphaValue:1.0];
-    
+    [self setAlphaValue:1.0];
 }
 - (void)mouseExited:(NSEvent *)theEvent
 {
-    [[self animator]setAlphaValue:0.5];
+    [self setAlphaValue:0.5];
 }
 
 @end

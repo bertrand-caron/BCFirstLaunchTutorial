@@ -123,13 +123,13 @@
 		976CF7821827D9FA00699E87 /* BCFirstLaunchTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				978C40411837E2E300B41F8E /* BCFadedInButton.h */,
+				978C40421837E2E300B41F8E /* BCFadedInButton.m */,
 				976CF78E1827D9FA00699E87 /* BCAppDelegate.h */,
 				976CF78F1827D9FA00699E87 /* BCAppDelegate.m */,
 				976CF7911827D9FA00699E87 /* MainMenu.xib */,
 				976CF7B51827E50000699E87 /* BCFirstLaunchTutorial.h */,
 				976CF7B61827E50000699E87 /* BCFirstLaunchTutorial.m */,
-				978C40411837E2E300B41F8E /* BCFadedInButton.h */,
-				978C40421837E2E300B41F8E /* BCFadedInButton.m */,
 				976CF7B71827E50000699E87 /* PopoverView.xib */,
 				976CF7941827D9FA00699E87 /* Images.xcassets */,
 				976CF7831827D9FA00699E87 /* Supporting Files */,
