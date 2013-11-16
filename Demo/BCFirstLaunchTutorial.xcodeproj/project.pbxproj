@@ -20,7 +20,7 @@
 		976CF7A71827D9FA00699E87 /* BCFirstLaunchTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CF7A61827D9FA00699E87 /* BCFirstLaunchTutorialTests.m */; };
 		976CF7B81827E50000699E87 /* BCFirstLaunchTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CF7B61827E50000699E87 /* BCFirstLaunchTutorial.m */; };
 		976CF7B91827E50000699E87 /* PopoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976CF7B71827E50000699E87 /* PopoverView.xib */; };
-		978C40431837E2E300B41F8E /* BCFadedInButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C40421837E2E300B41F8E /* BCFadedInButton.m */; };
+		978C40461837E5E500B41F8E /* BCFadedInButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C40451837E5E500B41F8E /* BCFadedInButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +56,8 @@
 		976CF7B51827E50000699E87 /* BCFirstLaunchTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCFirstLaunchTutorial.h; path = ../../BCFirstLaunchTutorial/BCFirstLaunchTutorial.h; sourceTree = "<group>"; };
 		976CF7B61827E50000699E87 /* BCFirstLaunchTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCFirstLaunchTutorial.m; path = ../../BCFirstLaunchTutorial/BCFirstLaunchTutorial.m; sourceTree = "<group>"; };
 		976CF7B71827E50000699E87 /* PopoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopoverView.xib; path = ../../BCFirstLaunchTutorial/PopoverView.xib; sourceTree = "<group>"; };
-		978C40411837E2E300B41F8E /* BCFadedInButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCFadedInButton.h; sourceTree = "<group>"; };
-		978C40421837E2E300B41F8E /* BCFadedInButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCFadedInButton.m; sourceTree = "<group>"; };
+		978C40441837E5E500B41F8E /* BCFadedInButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCFadedInButton.h; path = ../../BCFirstLaunchTutorial/BCFadedInButton.h; sourceTree = "<group>"; };
+		978C40451837E5E500B41F8E /* BCFadedInButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCFadedInButton.m; path = ../../BCFirstLaunchTutorial/BCFadedInButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +123,8 @@
 		976CF7821827D9FA00699E87 /* BCFirstLaunchTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				978C40411837E2E300B41F8E /* BCFadedInButton.h */,
-				978C40421837E2E300B41F8E /* BCFadedInButton.m */,
+				978C40441837E5E500B41F8E /* BCFadedInButton.h */,
+				978C40451837E5E500B41F8E /* BCFadedInButton.m */,
 				976CF78E1827D9FA00699E87 /* BCAppDelegate.h */,
 				976CF78F1827D9FA00699E87 /* BCAppDelegate.m */,
 				976CF7911827D9FA00699E87 /* MainMenu.xib */,
@@ -267,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				978C40431837E2E300B41F8E /* BCFadedInButton.m in Sources */,
+				978C40461837E5E500B41F8E /* BCFadedInButton.m in Sources */,
 				976CF7891827D9FA00699E87 /* main.m in Sources */,
 				976CF7901827D9FA00699E87 /* BCAppDelegate.m in Sources */,
 				976CF7B81827E50000699E87 /* BCFirstLaunchTutorial.m in Sources */,

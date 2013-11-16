@@ -6,7 +6,7 @@ BCFirstLaunchTutorial
 Installation
 ------------
 
-- Drag the three files (BCFirstLaunchTutorial.h, BCFirstLaunchTutorial.m, PopoverView.xib) to your project
+- Drag the five files from the BCFirstTimeLaunch directory (BCFirstLaunchTutorial.*, PopoverView.xib, BCFadedInButton.*) to your project
 
 
 Usage
