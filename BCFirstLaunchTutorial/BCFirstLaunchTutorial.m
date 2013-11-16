@@ -68,10 +68,10 @@ Main Method called by the programmer to set up the tutorial
                      [[popoverTextView superview]superview].frame.origin.y+20)];
         
         //Add a "do not show again" check box
-        NSButton* but =[[NSButton alloc] initWithFrame:NSMakeRect(5, 5, 125, 15)] ;
+        NSButton* but =[[NSButton alloc] initWithFrame:NSMakeRect(5, 5, 80, 15)] ;
         //[but setTitle:@"Do Not Show Again"];
         button=but;
-        [but setButtonType:NSHelpButtonBezelStyle];
+        [but setButtonType:NSMomentaryLightButton];
         [but setBezelStyle:0];
         [but setBordered:NO];
         [but setAction:@selector(writeToUserDefaults)];
@@ -183,7 +183,12 @@ Method called when the user clicks on the "Do not show again" dialog at the end 
  */
 -(void)writeToUserDefaults
 {
-    [self closePopover:self];
+    NSMutableAttributedString * attString =[[NSMutableAttributedString alloc] initWithAttributedString:[button attributedTitle]];
+    [attString removeAttribute:NSForegroundColorAttributeName range:NSMakeRange(0,[attString string].length)];
+    [attString addAttribute:NSForegroundColorAttributeName value:[NSColor blackColor] range:NSMakeRange(0,[attString string].length)];
+    [button setAttributedTitle:attString];
+    
+    [self performSelector:@selector(closePopover:) withObject:self afterDelay:0.05];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"dontShowTutorial"];
 }
 
