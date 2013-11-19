@@ -24,7 +24,8 @@ Only way to init the PopoverController
     {   currentEvent=0;
         popoverObjects = [NSMutableArray arrayWithCapacity:1];
         popoverTexts = [NSMutableArray arrayWithCapacity:1];
-        [ NSBundle loadNibNamed:@"PopoverView" owner:self];
+        //[ NSBundle loadNibNamed:@"PopoverView" owner:self];
+        BOOL load = [ [NSBundle mainBundle] loadNibNamed:@"PopoverView" owner:self topLevelObjects:nil];
         popover = [[NSPopover alloc]init];
         [popover setContentViewController:self];
     }
@@ -131,7 +132,7 @@ Close it, and calls the next Popover Event
 -(void)resize
 {
     //Spawn the layout and container for convenience
-    NSLayoutManager* layout = [popoverTextView layoutManager];
+    //NSLayoutManager* layout = [popoverTextView layoutManager];
     NSTextContainer* container = [popoverTextView textContainer];
     
     NSScrollView* scroll = (NSScrollView*)[[popoverTextView superview ]superview];

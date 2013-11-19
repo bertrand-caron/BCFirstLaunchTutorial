@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		972710E4183C00A500A98739 /* GuidedTourWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972710E3183C00A500A98739 /* GuidedTourWindow.xib */; };
+		972710EA183C016B00A98739 /* BCGuidedTourWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 972710E9183C016B00A98739 /* BCGuidedTourWindowController.m */; };
 		976CF77D1827D9FA00699E87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CF77C1827D9FA00699E87 /* Cocoa.framework */; };
 		976CF7871827D9FA00699E87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 976CF7851827D9FA00699E87 /* InfoPlist.strings */; };
 		976CF7891827D9FA00699E87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CF7881827D9FA00699E87 /* main.m */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		972710E3183C00A500A98739 /* GuidedTourWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GuidedTourWindow.xib; path = ../../BCFirstLaunchTutorial/GuidedTourWindow.xib; sourceTree = "<group>"; };
+		972710E8183C016B00A98739 /* BCGuidedTourWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCGuidedTourWindowController.h; path = ../../BCFirstLaunchTutorial/BCGuidedTourWindowController.h; sourceTree = "<group>"; };
+		972710E9183C016B00A98739 /* BCGuidedTourWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCGuidedTourWindowController.m; path = ../../BCFirstLaunchTutorial/BCGuidedTourWindowController.m; sourceTree = "<group>"; };
 		976CF7791827D9FA00699E87 /* BCFirstLaunchTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCFirstLaunchTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		976CF77C1827D9FA00699E87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		976CF77F1827D9FA00699E87 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -123,14 +128,17 @@
 		976CF7821827D9FA00699E87 /* BCFirstLaunchTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				978C40441837E5E500B41F8E /* BCFadedInButton.h */,
-				978C40451837E5E500B41F8E /* BCFadedInButton.m */,
 				976CF78E1827D9FA00699E87 /* BCAppDelegate.h */,
 				976CF78F1827D9FA00699E87 /* BCAppDelegate.m */,
 				976CF7911827D9FA00699E87 /* MainMenu.xib */,
 				976CF7B51827E50000699E87 /* BCFirstLaunchTutorial.h */,
 				976CF7B61827E50000699E87 /* BCFirstLaunchTutorial.m */,
 				976CF7B71827E50000699E87 /* PopoverView.xib */,
+				972710E8183C016B00A98739 /* BCGuidedTourWindowController.h */,
+				972710E9183C016B00A98739 /* BCGuidedTourWindowController.m */,
+				972710E3183C00A500A98739 /* GuidedTourWindow.xib */,
+				978C40441837E5E500B41F8E /* BCFadedInButton.h */,
+				978C40451837E5E500B41F8E /* BCFadedInButton.m */,
 				976CF7941827D9FA00699E87 /* Images.xcassets */,
 				976CF7831827D9FA00699E87 /* Supporting Files */,
 			);
@@ -245,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				976CF7871827D9FA00699E87 /* InfoPlist.strings in Resources */,
+				972710E4183C00A500A98739 /* GuidedTourWindow.xib in Resources */,
 				976CF7951827D9FA00699E87 /* Images.xcassets in Resources */,
 				976CF78D1827D9FA00699E87 /* Credits.rtf in Resources */,
 				976CF7931827D9FA00699E87 /* MainMenu.xib in Resources */,
@@ -271,6 +280,7 @@
 				976CF7891827D9FA00699E87 /* main.m in Sources */,
 				976CF7901827D9FA00699E87 /* BCAppDelegate.m in Sources */,
 				976CF7B81827E50000699E87 /* BCFirstLaunchTutorial.m in Sources */,
+				972710EA183C016B00A98739 /* BCGuidedTourWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

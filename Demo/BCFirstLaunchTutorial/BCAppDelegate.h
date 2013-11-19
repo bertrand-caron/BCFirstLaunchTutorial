@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "BCFirstLaunchTutorial.h"
+#import "BCGuidedTourWindowController.h"
 
 @interface BCAppDelegate : NSObject <NSApplicationDelegate>
 
@@ -19,6 +20,6 @@
 @property IBOutlet NSButton* button;
 
 @property (assign) BCFirstLaunchTutorial* popoverController;
-
+//@property BCGuidedTourWindowController* guidedTourWindowController;
 
 @end

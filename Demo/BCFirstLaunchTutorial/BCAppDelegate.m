@@ -15,6 +15,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self launchTutorial];
+    /*guidedTourWindowController = [[BCGuidedTourWindowController alloc]initWithWindowNibName:@"GuidedTourWindow"];
+    [[[guidedTourWindowController window] contentView]setWantsLayer:YES];*/
+    
 }
 
 
