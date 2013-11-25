@@ -31,6 +31,7 @@
     //[guidedTourWindowController displayButtons];
     [[guidedTourWindowController window] makeKeyAndOrderFront:self];
     
+    [[NSString stringWithFormat:@"Hello"] sizeWithAttributes:nil];
     
 }
 
