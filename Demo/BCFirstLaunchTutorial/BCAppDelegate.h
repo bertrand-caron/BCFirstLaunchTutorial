@@ -20,6 +20,6 @@
 @property IBOutlet NSButton* button;
 
 @property (assign) BCFirstLaunchTutorial* popoverController;
-//@property BCGuidedTourWindowController* guidedTourWindowController;
+@property BCGuidedTourWindowController* guidedTourWindowController;
 
 @end

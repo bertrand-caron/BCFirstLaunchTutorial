@@ -9,5 +9,19 @@
 #import <Cocoa/Cocoa.h>
 
 @interface BCGuidedTourWindowController : NSWindowController
+{
+    NSMutableArray* titleArray;
+    NSMutableArray* selectorArray;
+    NSImageView* logo;
+}
+
+@property id delegate;
+
+- (id)initWithWindow:(NSWindow *)window;
+
+
+
+-(void)addButtonWithTitle:(NSString*)buttonTitle andAction:(NSString*)aSelectorString;
+-(void)displayButtons;
 
 @end

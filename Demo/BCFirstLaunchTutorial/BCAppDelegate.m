@@ -10,13 +10,27 @@
 
 @implementation BCAppDelegate
 
-@synthesize textField,tableView,searchField,button,popoverController;
+@synthesize textField,tableView,searchField,button,popoverController,guidedTourWindowController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [self launchTutorial];
-    /*guidedTourWindowController = [[BCGuidedTourWindowController alloc]initWithWindowNibName:@"GuidedTourWindow"];
-    [[[guidedTourWindowController window] contentView]setWantsLayer:YES];*/
+    
+    guidedTourWindowController = [[BCGuidedTourWindowController alloc]initWithWindowNibName:@"GuidedTourWindow"];
+    [[guidedTourWindowController window] setTitle:@"Welcome to my App !"];
+    //[[[guidedTourWindowController window] contentView]setWantsLayer:YES];
+    
+    /*NSImage* my = [NSImage imageNamed:@"Slice1"];
+    [[[guidedTourWindowController window]  contentView] layer].contents= my;*/
+    
+    [guidedTourWindowController addButtonWithTitle:@"Tutorial" andAction:@"launchTutorial"];
+    [guidedTourWindowController addButtonWithTitle:@"Get Started" andAction:@"getStarted"];
+    [guidedTourWindowController addButtonWithTitle:@"Web Site" andAction:@"launchWebSite"];
+    [guidedTourWindowController addButtonWithTitle:@"Help" andAction:@"openHelp"];
+    
+    [guidedTourWindowController setDelegate:self];
+    //[guidedTourWindowController displayButtons];
+    [[guidedTourWindowController window] makeKeyAndOrderFront:self];
+    
     
 }
 
@@ -34,6 +48,23 @@
                                       andText:@"This is the last help bubble. The tutorial will be done when you close it.You can always launch it again."];
     
     [popoverController proceedToNextPopoverEvent];
+}
+
+-(void)getStarted
+{
+    [[[guidedTourWindowController window] animator ] close];
+    [_window makeKeyAndOrderFront:self];
+    [self launchTutorial];
+}
+
+-(void)launchWebSite
+{
+    
+}
+
+-(void)openHelp
+{
+    
 }
 
 @end

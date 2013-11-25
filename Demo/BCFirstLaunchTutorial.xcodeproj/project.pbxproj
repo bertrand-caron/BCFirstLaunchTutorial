@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9720709B184152BE0028AA5F /* BCRoundedLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9720709A184152BE0028AA5F /* BCRoundedLine.m */; };
 		972710E4183C00A500A98739 /* GuidedTourWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972710E3183C00A500A98739 /* GuidedTourWindow.xib */; };
 		972710EA183C016B00A98739 /* BCGuidedTourWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 972710E9183C016B00A98739 /* BCGuidedTourWindowController.m */; };
+		9738C4381841FE0500600754 /* NSBezierPath+Bounce.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738C4371841FE0500600754 /* NSBezierPath+Bounce.m */; };
+		9738C43A184208B800600754 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9738C439184208B800600754 /* QuartzCore.framework */; };
+		9738C43C184208C200600754 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9738C43B184208C200600754 /* Quartz.framework */; };
 		976CF77D1827D9FA00699E87 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976CF77C1827D9FA00699E87 /* Cocoa.framework */; };
 		976CF7871827D9FA00699E87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 976CF7851827D9FA00699E87 /* InfoPlist.strings */; };
 		976CF7891827D9FA00699E87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CF7881827D9FA00699E87 /* main.m */; };
@@ -36,9 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		97207099184152BE0028AA5F /* BCRoundedLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCRoundedLine.h; path = ../../BCFirstLaunchTutorial/BCRoundedLine.h; sourceTree = "<group>"; };
+		9720709A184152BE0028AA5F /* BCRoundedLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCRoundedLine.m; path = ../../BCFirstLaunchTutorial/BCRoundedLine.m; sourceTree = "<group>"; };
 		972710E3183C00A500A98739 /* GuidedTourWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GuidedTourWindow.xib; path = ../../BCFirstLaunchTutorial/GuidedTourWindow.xib; sourceTree = "<group>"; };
 		972710E8183C016B00A98739 /* BCGuidedTourWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCGuidedTourWindowController.h; path = ../../BCFirstLaunchTutorial/BCGuidedTourWindowController.h; sourceTree = "<group>"; };
 		972710E9183C016B00A98739 /* BCGuidedTourWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCGuidedTourWindowController.m; path = ../../BCFirstLaunchTutorial/BCGuidedTourWindowController.m; sourceTree = "<group>"; };
+		9738C4361841FE0500600754 /* NSBezierPath+Bounce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSBezierPath+Bounce.h"; path = "../../BCFirstLaunchTutorial/NSBezierPath+Bounce.h"; sourceTree = "<group>"; };
+		9738C4371841FE0500600754 /* NSBezierPath+Bounce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSBezierPath+Bounce.m"; path = "../../BCFirstLaunchTutorial/NSBezierPath+Bounce.m"; sourceTree = "<group>"; };
+		9738C439184208B800600754 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9738C43B184208C200600754 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		976CF7791827D9FA00699E87 /* BCFirstLaunchTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCFirstLaunchTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		976CF77C1827D9FA00699E87 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		976CF77F1827D9FA00699E87 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -70,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9738C43C184208C200600754 /* Quartz.framework in Frameworks */,
+				9738C43A184208B800600754 /* QuartzCore.framework in Frameworks */,
 				976CF77D1827D9FA00699E87 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +120,8 @@
 		976CF77B1827D9FA00699E87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9738C43B184208C200600754 /* Quartz.framework */,
+				9738C439184208B800600754 /* QuartzCore.framework */,
 				976CF77C1827D9FA00699E87 /* Cocoa.framework */,
 				976CF79B1827D9FA00699E87 /* XCTest.framework */,
 				976CF77E1827D9FA00699E87 /* Other Frameworks */,
@@ -139,6 +153,10 @@
 				972710E3183C00A500A98739 /* GuidedTourWindow.xib */,
 				978C40441837E5E500B41F8E /* BCFadedInButton.h */,
 				978C40451837E5E500B41F8E /* BCFadedInButton.m */,
+				97207099184152BE0028AA5F /* BCRoundedLine.h */,
+				9720709A184152BE0028AA5F /* BCRoundedLine.m */,
+				9738C4361841FE0500600754 /* NSBezierPath+Bounce.h */,
+				9738C4371841FE0500600754 /* NSBezierPath+Bounce.m */,
 				976CF7941827D9FA00699E87 /* Images.xcassets */,
 				976CF7831827D9FA00699E87 /* Supporting Files */,
 			);
@@ -276,6 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9720709B184152BE0028AA5F /* BCRoundedLine.m in Sources */,
+				9738C4381841FE0500600754 /* NSBezierPath+Bounce.m in Sources */,
 				978C40461837E5E500B41F8E /* BCFadedInButton.m in Sources */,
 				976CF7891827D9FA00699E87 /* main.m in Sources */,
 				976CF7901827D9FA00699E87 /* BCAppDelegate.m in Sources */,

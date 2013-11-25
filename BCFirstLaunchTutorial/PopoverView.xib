@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="BCFirstLaunchTutorial">
             <connections>
+                <outlet property="button" destination="g0X-9a-Obk" id="sFS-KL-wgA"/>
                 <outlet property="popoverTextView" destination="eWJ-IX-oOj" id="rQD-QO-9Hr"/>
                 <outlet property="view" destination="1" id="uD2-vK-18T"/>
             </connections>

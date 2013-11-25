@@ -9,5 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @interface BCFadedInButton : NSButton
+{
+    float defautAlphaValue;
+    float highlightedAlphaValue;
+}
+@property BOOL isShown;
+
+-(void)fadeIn;
 
 @end

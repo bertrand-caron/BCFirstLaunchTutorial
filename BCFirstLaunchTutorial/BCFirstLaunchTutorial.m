@@ -25,9 +25,10 @@ Only way to init the PopoverController
         popoverObjects = [NSMutableArray arrayWithCapacity:1];
         popoverTexts = [NSMutableArray arrayWithCapacity:1];
         //[ NSBundle loadNibNamed:@"PopoverView" owner:self];
-        BOOL load = [ [NSBundle mainBundle] loadNibNamed:@"PopoverView" owner:self topLevelObjects:nil];
+        [ [NSBundle mainBundle] loadNibNamed:@"PopoverView" owner:self topLevelObjects:nil];
         popover = [[NSPopover alloc]init];
         [popover setContentViewController:self];
+        [button setIsShown:YES];
     }
     return self;
 }
@@ -69,9 +70,10 @@ Main Method called by the programmer to set up the tutorial
                      [[popoverTextView superview]superview].frame.origin.y+20)];
         
         //Add a "do not show again" check box
-        NSButton* but =[[NSButton alloc] initWithFrame:NSMakeRect(5, 5, 80, 15)] ;
+        BCFadedInButton* but =[[BCFadedInButton alloc] initWithFrame:NSMakeRect(5, 5, 80, 15)] ;
+        [but setIsShown:YES];
         //[but setTitle:@"Do Not Show Again"];
-        button=but;
+        //button=but;
         [but setButtonType:NSMomentaryLightButton];
         [but setBezelStyle:0];
         [but setBordered:NO];
