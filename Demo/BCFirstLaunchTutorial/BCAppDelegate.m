@@ -34,8 +34,7 @@
     
 }
 
-
--(void)launchTutorial
+-(void)setUpTutorial
 {
     popoverController = [[BCFirstLaunchTutorial alloc] initFromXib];
     [popoverController  addNewEventWithObject:tableView
@@ -46,7 +45,13 @@
                                       andText:@"This is my Search Field. I'd like the Popover to have a dynamic height. It now does."];
     [popoverController  addNewEventWithObject:textField
                                       andText:@"This is the last help bubble. The tutorial will be done when you close it.You can always launch it again."];
-    
+}
+
+-(void)launchTutorial
+{
+    [self setUpTutorial];
+    [[[guidedTourWindowController window] animator ] close];
+    [_window makeKeyAndOrderFront:self];
     [popoverController proceedToNextPopoverEvent];
 }
 
@@ -54,7 +59,6 @@
 {
     [[[guidedTourWindowController window] animator ] close];
     [_window makeKeyAndOrderFront:self];
-    [self launchTutorial];
 }
 
 -(void)launchWebSite
