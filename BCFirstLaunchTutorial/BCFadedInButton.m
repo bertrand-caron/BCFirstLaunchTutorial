@@ -21,9 +21,11 @@
         defautAlphaValue=0.5;
         highlightedAlphaValue=1.0;
         isShown=NO;
-        
+        [self setBordered:NO];
+        [self setAlignment:NSRightTextAlignment];
+        [self setButtonType:NSMomentaryChangeButton];
         [self setBezelStyle:NSRegularSquareBezelStyle];
-        
+        [self.cell setFont:[NSFont fontWithName:@"Arial Rounded MT Bold" size:53]];
         
         [self addTrackingArea:[[NSTrackingArea alloc] initWithRect:[self frame] options:NSTrackingInVisibleRect| NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways owner:self userInfo:nil]];
         [self setAlphaValue:defautAlphaValue];
@@ -36,6 +38,8 @@
 {
     defautAlphaValue=0.5;
     highlightedAlphaValue=1.0;
+    [self setBordered:NO];
+    
     [self addTrackingArea:[[NSTrackingArea alloc] initWithRect:[self frame] options:NSTrackingInVisibleRect| NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways owner:self userInfo:nil]];
     [self setAlphaValue:defautAlphaValue];
 }
@@ -88,5 +92,23 @@
     [[self animator] setAlphaValue:defautAlphaValue];
     [NSAnimationContext endGrouping];
     isShown=YES;
+}
+
+- (void)setTitle:(NSString*)aString
+{
+    //Get the current frame
+    NSRect frame = [self frame];
+    
+    //Call super
+    [super setTitle:aString];
+    
+    //Get the Size
+    NSSize newSize = [aString sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                  [NSFont fontWithName:@"Arial Rounded MT Bold" size:53.0],NSFontAttributeName,
+                                                  nil
+                                                  ]];
+    //set the frame origin
+    [self setFrameSize:NSMakeSize(newSize.width+30, frame.size.height)];
+    [self setFrameOrigin:NSMakePoint(frame.origin.x+frame.size.width-(newSize.width+30), frame.origin.y)];
 }
 @end

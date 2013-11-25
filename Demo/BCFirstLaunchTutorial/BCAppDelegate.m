@@ -59,12 +59,12 @@
 
 -(void)launchWebSite
 {
-    
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://lmgtfy.com/?q=website"]];
 }
 
 -(void)openHelp
 {
-    
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://lmgtfy.com/?q=help"]];
 }
 
 @end

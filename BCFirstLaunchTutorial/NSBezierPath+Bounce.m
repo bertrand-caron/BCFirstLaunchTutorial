@@ -15,7 +15,7 @@
     float duration=0.0;
     
     float y0=600;
-    float g=1000.0; //m.s-2
+    float g=2000.0; //m.s-2
     
     float K = 0.2;  //Bouncing coefficient
     float bounceThreshold= 1.0/100;

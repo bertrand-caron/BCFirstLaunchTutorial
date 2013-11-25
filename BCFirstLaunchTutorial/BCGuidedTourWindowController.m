@@ -127,14 +127,10 @@
         but = [[BCFadedInButton alloc]initWithFrame:(NSRect){350,400+currentHeight,400,buttonHeight}];
         [but setTitle:obj];
         [but setTarget:delegate];
-        [but setBordered:NO];
-        [but.cell setFont:[NSFont fontWithName:@"Arial Rounded MT Bold" size:53]];
-        [but setAlignment:NSRightTextAlignment];
-        [but setButtonType:NSMomentaryChangeButton];
         [but setAlphaValue:0.0];
         [but setAction:NSSelectorFromString([selectorArray objectAtIndex:idx])  ];
-        [[ [self window] contentView] addSubview:but];
-        //[but setBordered:YES];
+        
+        [ [ [self window] contentView] addSubview:but];
         
         [but performSelector:@selector(fadeIn) withObject:nil afterDelay:currentDelay];
         
