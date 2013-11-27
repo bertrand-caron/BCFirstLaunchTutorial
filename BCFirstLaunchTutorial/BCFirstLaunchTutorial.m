@@ -163,23 +163,6 @@ Close it, and calls the next Popover Event
     [popover setContentSize:NSMakeSize([popover contentSize].width, scroll.frame.size.height+33)]; //Magic Number, depends on your customView dimensions
 }
 
-#pragma mark - "Do not Show Again " Label Customization via NSTrackingArea
-- (void) mouseEntered:(NSEvent*)theEvent {
-    //Set text color
-    NSMutableAttributedString * attString =[[NSMutableAttributedString alloc] initWithAttributedString:[button attributedTitle]];
-    [attString removeAttribute:NSForegroundColorAttributeName range:NSMakeRange(0,[attString string].length)];
-    [attString addAttribute:NSForegroundColorAttributeName value:[NSColor darkGrayColor] range:NSMakeRange(0,[attString string].length)];
-    [button setAttributedTitle:attString];
-}
-
-- (void) mouseExited:(NSEvent*)theEvent {
-    //Set text color
-    NSMutableAttributedString * attString =[[NSMutableAttributedString alloc] initWithAttributedString:[button attributedTitle]];
-    [attString removeAttribute:NSForegroundColorAttributeName range:NSMakeRange(0,[attString string].length)];
-    [attString addAttribute:NSForegroundColorAttributeName value:[NSColor headerColor] range:NSMakeRange(0,[attString string].length)];
-    [button setAttributedTitle:attString];
-}
-
 #pragma mark - User Default Interactions
 /**
 Method called when the user clicks on the "Do not show again" dialog at the end of the tutorial

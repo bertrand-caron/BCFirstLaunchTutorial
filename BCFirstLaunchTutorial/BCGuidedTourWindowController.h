@@ -15,11 +15,9 @@
     NSImageView* logo;
 }
 
-@property id delegate;
+@property (strong) id delegate;
 
 - (id)initWithWindow:(NSWindow *)window;
-
-
 
 -(void)addButtonWithTitle:(NSString*)buttonTitle andAction:(NSString*)aSelectorString;
 -(void)displayButtons;

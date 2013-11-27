@@ -19,7 +19,7 @@
 @property IBOutlet NSTextField* textField;
 @property IBOutlet NSButton* button;
 
-@property (assign) BCFirstLaunchTutorial* popoverController;
+@property (strong) BCFirstLaunchTutorial* popoverController;
 @property BCGuidedTourWindowController* guidedTourWindowController;
 
 @end

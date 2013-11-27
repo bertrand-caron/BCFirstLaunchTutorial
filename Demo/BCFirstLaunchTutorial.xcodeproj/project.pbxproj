@@ -27,6 +27,7 @@
 		976CF7B81827E50000699E87 /* BCFirstLaunchTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 976CF7B61827E50000699E87 /* BCFirstLaunchTutorial.m */; };
 		976CF7B91827E50000699E87 /* PopoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976CF7B71827E50000699E87 /* PopoverView.xib */; };
 		978C40461837E5E500B41F8E /* BCFadedInButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C40451837E5E500B41F8E /* BCFadedInButton.m */; };
+		97D38B5218447F8600304D0F /* NSImage+BCAddReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 97D38B5118447F8600304D0F /* NSImage+BCAddReflection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		976CF7B71827E50000699E87 /* PopoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopoverView.xib; path = ../../BCFirstLaunchTutorial/PopoverView.xib; sourceTree = "<group>"; };
 		978C40441837E5E500B41F8E /* BCFadedInButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCFadedInButton.h; path = ../../BCFirstLaunchTutorial/BCFadedInButton.h; sourceTree = "<group>"; };
 		978C40451837E5E500B41F8E /* BCFadedInButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BCFadedInButton.m; path = ../../BCFirstLaunchTutorial/BCFadedInButton.m; sourceTree = "<group>"; };
+		97D38B5018447F8600304D0F /* NSImage+BCAddReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+BCAddReflection.h"; path = "../../BCFirstLaunchTutorial/NSImage+BCAddReflection.h"; sourceTree = "<group>"; };
+		97D38B5118447F8600304D0F /* NSImage+BCAddReflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+BCAddReflection.m"; path = "../../BCFirstLaunchTutorial/NSImage+BCAddReflection.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 				9720709A184152BE0028AA5F /* BCRoundedLine.m */,
 				9738C4361841FE0500600754 /* NSBezierPath+Bounce.h */,
 				9738C4371841FE0500600754 /* NSBezierPath+Bounce.m */,
+				97D38B5018447F8600304D0F /* NSImage+BCAddReflection.h */,
+				97D38B5118447F8600304D0F /* NSImage+BCAddReflection.m */,
 				976CF7941827D9FA00699E87 /* Images.xcassets */,
 				976CF7831827D9FA00699E87 /* Supporting Files */,
 			);
@@ -298,6 +303,7 @@
 				9738C4381841FE0500600754 /* NSBezierPath+Bounce.m in Sources */,
 				978C40461837E5E500B41F8E /* BCFadedInButton.m in Sources */,
 				976CF7891827D9FA00699E87 /* main.m in Sources */,
+				97D38B5218447F8600304D0F /* NSImage+BCAddReflection.m in Sources */,
 				976CF7901827D9FA00699E87 /* BCAppDelegate.m in Sources */,
 				976CF7B81827E50000699E87 /* BCFirstLaunchTutorial.m in Sources */,
 				972710EA183C016B00A98739 /* BCGuidedTourWindowController.m in Sources */,
