@@ -12,6 +12,7 @@
 
 #import "NSBezierPath+Bounce.h"
 #import <QuartzCore/QuartzCore.h>
+#import "NSImage+BCAddReflection.h"
 
 @implementation BCGuidedTourWindowController
 @synthesize delegate;
@@ -68,17 +69,44 @@
     
     //Create a sublayer that contains the image and is animated
     CALayer* testLayer = [CALayer layer];
-    testLayer.frame=CGRectMake(0, 200, 206, 233);
-    testLayer.contents = (id)([[NSImage imageNamed:@"Slice2"] CGImageForProposedRect:NULL context:nil hints:nil]);
+    NSImage* img = [NSImage imageNamed:@"Slice2"];
+    testLayer.frame=CGRectMake(0, 200, img.size.width, img.size.height);
+    testLayer.contents = (id)([ img CGImageForProposedRect:NULL context:nil hints:nil]);
+    
+    //Now, deal with the shadow
+    CALayer* shadowLayer = [CALayer layer];
+    NSImage* reflection = [img getReflection:0.4];
+    shadowLayer.frame=CGRectMake(0, 100, reflection.size.width, reflection.size.height);
+    shadowLayer.contents = (id)([ reflection CGImageForProposedRect:NULL context:nil hints:nil]);
     
     //Add the sublayer
     [bounceLayer addSublayer:testLayer];
+    [bounceLayer addSublayer:shadowLayer];
     
     //Get the Animation Path
     
     NSDictionary* pathDict = [NSBezierPath bounceToPoint:NSMakePoint(0, 0)];
     
+    //Get the image Path
     NSBezierPath* path = [pathDict objectForKey:@"path"];
+    NSAffineTransform* transform = [NSAffineTransform transform];
+    [transform translateXBy:100.0 yBy:250];
+    [path transformUsingAffineTransform:transform];
+    
+    //Make the shadow path from it
+    NSAffineTransform* shadowTransform1 = [NSAffineTransform transform];
+    [shadowTransform1 translateXBy:0 yBy:-200];
+    NSAffineTransform* shadowTransform2 = [NSAffineTransform transform];
+    [shadowTransform2 scaleXBy:1.0 yBy:-1.0];
+    NSAffineTransform* shadowTransform3 = [NSAffineTransform transform];
+    [shadowTransform3 translateXBy:0 yBy:160];
+    
+    NSAffineTransform* shadowTransformTot = [NSAffineTransform transform];
+    [shadowTransformTot appendTransform:shadowTransform1];
+    [shadowTransformTot appendTransform:shadowTransform2];
+    [shadowTransformTot appendTransform:shadowTransform3];
+    NSBezierPath* shadowPath = [path copy];
+    [shadowPath transformUsingAffineTransform:shadowTransformTot];
     
     //Then, Animate it
     [CATransaction begin];
@@ -86,12 +114,22 @@
         //testLayer.position=CGPointMake(0, 200);
         [self performSelector:@selector(displayButtons) withObject:nil afterDelay:1.0];
     }];
-    
+        //Create the image anim
         CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
         anim.path = [path quartzPath];
         anim.repeatCount = 0;
         anim.duration = [[pathDict objectForKey:@"duration"] floatValue];
-        [bounceLayer addAnimation:anim forKey:@"bounce"];
+    
+        //Now, the shadow anim
+        CAKeyframeAnimation* shadowAnim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+        shadowAnim.path = [shadowPath quartzPath];
+        shadowAnim.repeatCount = 0;
+        shadowAnim.duration = [[pathDict objectForKey:@"duration"] floatValue];
+    
+        //Fire both the anims
+        [testLayer addAnimation:anim forKey:@"bounce"];
+        [shadowLayer addAnimation:shadowAnim forKey:@"shadowBounce"];
+    
     
     [CATransaction commit];
     

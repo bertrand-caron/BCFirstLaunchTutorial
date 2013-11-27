@@ -7,6 +7,7 @@
 //
 
 #import "BCAppDelegate.h"
+#import "NSImage+BCAddReflection.h"
 
 @implementation BCAppDelegate
 
@@ -32,6 +33,8 @@
     [[guidedTourWindowController window] makeKeyAndOrderFront:self];
     
     [[NSString stringWithFormat:@"Hello"] sizeWithAttributes:nil];
+    
+    [self test];
     
 }
 
@@ -70,6 +73,15 @@
 -(void)openHelp
 {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://lmgtfy.com/?q=help"]];
+}
+
+-(void)test
+{
+    /*NSImage* img = [NSImage imageNamed:@"Slice2"];
+    NSImage* reflection = [img getReflection:0.4];
+    NSImageView* imgView = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 100, 100)];
+    [[[self window] contentView ] addSubview:imgView];*/
+    
 }
 
 @end
