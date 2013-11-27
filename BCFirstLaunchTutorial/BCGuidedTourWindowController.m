@@ -16,6 +16,7 @@
 
 @implementation BCGuidedTourWindowController
 @synthesize delegate;
+@synthesize logoString;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -40,6 +41,13 @@
     [[logo animator] setFrameOrigin:NSMakePoint(0, 150)];
     [NSAnimationContext endGrouping];*/
     
+    return self;
+}
+
+-(id)initWithWindowNibName:(NSString *)windowNibName andLogo:(NSString*)logo
+{
+    self = [super initWithWindowNibName:windowNibName];
+    logoString = logo;
     return self;
 }
 
@@ -69,7 +77,7 @@
     
     //Create a sublayer that contains the image and is animated
     CALayer* testLayer = [CALayer layer];
-    NSImage* img = [NSImage imageNamed:@"Slice2"];
+    NSImage* img = [NSImage imageNamed: logoString];
     testLayer.frame=CGRectMake(0, 200, img.size.width, img.size.height);
     testLayer.contents = (id)([ img CGImageForProposedRect:NULL context:nil hints:nil]);
     
@@ -145,12 +153,14 @@
 {
     int buttonHeight=75 ;
     
+    NSAssert([titleArray count]<=7, @"You have too many buttons, clipping is gonna occur.");
+    
     //First, display a solid vertical bar spanning the buttons
     BCRoundedLine* roundedLine = [[BCRoundedLine alloc]initWithFrame:NSMakeRect(
         760,
         ([[self window] frame].size.height-titleArray.count*(buttonHeight))/2,
         2,
-        [ [self window] frame].size.height-titleArray.count*(buttonHeight+7))];
+         titleArray.count*(buttonHeight))];
     
     [roundedLine setColor:[NSColor darkGrayColor]];
     [[NSAnimationContext currentContext] setDuration:2.0];
@@ -159,10 +169,10 @@
     
     //Then, fade the buttons in
     __block BCFadedInButton* but;
-    __block int currentHeight=0;
+    __block int currentHeight=[[self window] frame].size.height-roundedLine.frame.origin.y-buttonHeight;
     __block float currentDelay=0;
     [titleArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        but = [[BCFadedInButton alloc]initWithFrame:(NSRect){350,400+currentHeight,400,buttonHeight}];
+        but = [[BCFadedInButton alloc]initWithFrame:(NSRect){350,currentHeight,400,buttonHeight}];
         [but setTitle:obj];
         [but setTarget:delegate];
         [but setAlphaValue:0.0];

@@ -12,12 +12,13 @@
 {
     NSMutableArray* titleArray;
     NSMutableArray* selectorArray;
-    NSImageView* logo;
 }
 
 @property (strong) id delegate;
+@property NSString* logoString;
 
 - (id)initWithWindow:(NSWindow *)window;
+-(id)initWithWindowNibName:(NSString *)windowNibName andLogo:(NSString*)logo;
 
 -(void)addButtonWithTitle:(NSString*)buttonTitle andAction:(NSString*)aSelectorString;
 -(void)displayButtons;

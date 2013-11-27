@@ -16,23 +16,19 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     
-    guidedTourWindowController = [[BCGuidedTourWindowController alloc]initWithWindowNibName:@"GuidedTourWindow"];
+    guidedTourWindowController = [[BCGuidedTourWindowController alloc]initWithWindowNibName:@"GuidedTourWindow" andLogo:@"Slice3"];
     [[guidedTourWindowController window] setTitle:@"Welcome to my App !"];
-    //[[[guidedTourWindowController window] contentView]setWantsLayer:YES];
-    
-    /*NSImage* my = [NSImage imageNamed:@"Slice1"];
-    [[[guidedTourWindowController window]  contentView] layer].contents= my;*/
     
     [guidedTourWindowController addButtonWithTitle:@"Tutorial" andAction:@"launchTutorial"];
     [guidedTourWindowController addButtonWithTitle:@"Get Started" andAction:@"getStarted"];
-    [guidedTourWindowController addButtonWithTitle:@"Web Site" andAction:@"launchWebSite"];
+    /*[guidedTourWindowController addButtonWithTitle:@"Web Site" andAction:@"launchWebSite"];
     [guidedTourWindowController addButtonWithTitle:@"Help" andAction:@"openHelp"];
+    [guidedTourWindowController addButtonWithTitle:@"Extra" andAction:@""];
+    [guidedTourWindowController addButtonWithTitle:@"Again" andAction:@""];
+    [guidedTourWindowController addButtonWithTitle:@"Again2" andAction:@""];*/
     
     [guidedTourWindowController setDelegate:self];
-    //[guidedTourWindowController displayButtons];
     [[guidedTourWindowController window] makeKeyAndOrderFront:self];
-    
-    [[NSString stringWithFormat:@"Hello"] sizeWithAttributes:nil];
     
     [self test];
     
