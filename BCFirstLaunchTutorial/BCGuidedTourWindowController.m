@@ -90,16 +90,16 @@
     //Get the image Path
     NSBezierPath* path = [pathDict objectForKey:@"path"];
     NSAffineTransform* transform = [NSAffineTransform transform];
-    [transform translateXBy:100.0 yBy:250];
+    [transform translateXBy:103.0 yBy:300];
     [path transformUsingAffineTransform:transform];
     
     //Make the shadow path from it
     NSAffineTransform* shadowTransform1 = [NSAffineTransform transform];
-    [shadowTransform1 translateXBy:0 yBy:-200];
+    [shadowTransform1 translateXBy:0 yBy:-240];
     NSAffineTransform* shadowTransform2 = [NSAffineTransform transform];
     [shadowTransform2 scaleXBy:1.0 yBy:-1.0];
     NSAffineTransform* shadowTransform3 = [NSAffineTransform transform];
-    [shadowTransform3 translateXBy:0 yBy:160];
+    [shadowTransform3 translateXBy:0 yBy:200];
     
     NSAffineTransform* shadowTransformTot = [NSAffineTransform transform];
     [shadowTransformTot appendTransform:shadowTransform1];
