@@ -16,7 +16,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     
-    guidedTourWindowController = [[BCGuidedTourWindowController alloc]initWithWindowNibName:@"GuidedTourWindow" andLogo:@"Slice3"];
+    guidedTourWindowController = [[BCGuidedTourWindowController alloc]initWithWindowNibName:@"GuidedTourWindow" andLogo:@"Slice2"];
     [[guidedTourWindowController window] setTitle:@"Welcome to my App !"];
     
     [guidedTourWindowController addButtonWithTitle:@"Tutorial" andAction:@"launchTutorial"];

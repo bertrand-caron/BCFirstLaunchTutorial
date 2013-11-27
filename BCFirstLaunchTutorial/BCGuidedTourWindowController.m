@@ -60,8 +60,11 @@
 
 -(void)awakeFromNib
 {
-    //[[[self window]contentView ] setWantsLayer:YES];
-    //[ [[[self window]contentView ] layer] setBackgroundColor: [[NSColor whiteColor]CGColor] ];
+    //White a white background layer by getting the windos's content view to be layer hosting
+    CALayer* backgroundLayer = [CALayer layer];
+    [[[self window]contentView ] setLayer:backgroundLayer];
+    [[[self window]contentView ] setWantsLayer:YES];
+    [ [[[self window]contentView ] layer] setBackgroundColor: [[NSColor whiteColor]CGColor] ];
     
     
     //Create a view for hosting the bouncing Layer and register it as a subview of the window's content
@@ -163,6 +166,7 @@
          titleArray.count*(buttonHeight))];
     
     [roundedLine setColor:[NSColor darkGrayColor]];
+    [roundedLine setAlphaValue:0.5];
     [[NSAnimationContext currentContext] setDuration:2.0];
     [[[self window] contentView] addSubview:roundedLine];
     [[roundedLine animator ] setAlphaValue:1.0];
