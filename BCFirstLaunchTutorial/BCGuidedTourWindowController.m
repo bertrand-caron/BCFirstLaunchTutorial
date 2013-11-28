@@ -7,7 +7,6 @@
 //
 
 #import "BCGuidedTourWindowController.h"
-#import "BCFadedInButton.h"
 #import "BCRoundedLine.h"
 
 #import "NSBezierPath+Bounce.h"
@@ -17,6 +16,7 @@
 @implementation BCGuidedTourWindowController
 @synthesize delegate;
 @synthesize logoString;
+@synthesize attributes;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -154,9 +154,9 @@
 
 -(void)displayButtons
 {
-    int buttonHeight=75 ;
+    int buttonHeight=[BCFadedInButton heightWithAttributes:attributes];
     
-    NSAssert([titleArray count]<=7, @"You have too many buttons, clipping is gonna occur.");
+    NSAssert([titleArray count]*buttonHeight<=[self window].frame.size.height, @"You have too many buttons, clipping is gonna occur. Either change Font size of button number.");
     
     //First, display a solid vertical bar spanning the buttons
     BCRoundedLine* roundedLine = [[BCRoundedLine alloc]initWithFrame:NSMakeRect(
@@ -177,6 +177,7 @@
     __block float currentDelay=0;
     [titleArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         but = [[BCFadedInButton alloc]initWithFrame:(NSRect){350,currentHeight,400,buttonHeight}];
+        [but setDelegate:self];
         [but setTitle:obj];
         [but setTarget:delegate];
         [but setAlphaValue:0.0];

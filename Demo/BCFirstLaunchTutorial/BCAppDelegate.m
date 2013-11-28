@@ -18,11 +18,15 @@
     
     guidedTourWindowController = [[BCGuidedTourWindowController alloc]initWithWindowNibName:@"GuidedTourWindow" andLogo:@"Slice2"];
     [[guidedTourWindowController window] setTitle:@"Welcome to my App !"];
+    [guidedTourWindowController setAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                               [NSFont fontWithName:@"Arial Rounded MT Bold" size:70.0],NSFontAttributeName,
+                                               nil
+                                               ]];
     
     [guidedTourWindowController addButtonWithTitle:@"Tutorial" andAction:@"launchTutorial"];
     [guidedTourWindowController addButtonWithTitle:@"Get Started" andAction:@"getStarted"];
-    /*[guidedTourWindowController addButtonWithTitle:@"Web Site" andAction:@"launchWebSite"];
-    [guidedTourWindowController addButtonWithTitle:@"Help" andAction:@"openHelp"];
+    [guidedTourWindowController addButtonWithTitle:@"Web Site" andAction:@"launchWebSite"];
+    /*[guidedTourWindowController addButtonWithTitle:@"Help" andAction:@"openHelp"];
     [guidedTourWindowController addButtonWithTitle:@"Extra" andAction:@""];
     [guidedTourWindowController addButtonWithTitle:@"Again" andAction:@""];
     [guidedTourWindowController addButtonWithTitle:@"Again2" andAction:@""];*/

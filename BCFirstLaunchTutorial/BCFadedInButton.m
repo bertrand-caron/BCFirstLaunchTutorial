@@ -11,6 +11,7 @@
 @implementation BCFadedInButton
 
 @synthesize isShown;
+@synthesize delegate;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -25,7 +26,7 @@
         [self setAlignment:NSRightTextAlignment];
         [self setButtonType:NSMomentaryChangeButton];
         [self setBezelStyle:NSRegularSquareBezelStyle];
-        [self.cell setFont:[NSFont fontWithName:@"Arial Rounded MT Bold" size:53]];
+        //[self.cell setFont:[NSFont fontWithName:@"Arial Rounded MT Bold" size:53]];
         
         [self addTrackingArea:[[NSTrackingArea alloc] initWithRect:[self frame] options:NSTrackingInVisibleRect| NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways owner:self userInfo:nil]];
         [self setAlphaValue:defautAlphaValue];
@@ -100,15 +101,23 @@
     NSRect frame = [self frame];
     
     //Call super
-    [super setTitle:aString];
+    //[super setTitle:aString];
+    
+    
+    [super setAttributedTitle:
+        [[NSAttributedString alloc]initWithString:aString attributes:[delegate attributes]]
+    ];
     
     //Get the Size
-    NSSize newSize = [aString sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                  [NSFont fontWithName:@"Arial Rounded MT Bold" size:53.0],NSFontAttributeName,
-                                                  nil
-                                                  ]];
+    NSSize newSize = [aString sizeWithAttributes:[delegate attributes]];
     //set the frame origin
     [self setFrameSize:NSMakeSize(newSize.width+30, frame.size.height)];
     [self setFrameOrigin:NSMakePoint(frame.origin.x+frame.size.width-(newSize.width+30), frame.origin.y)];
 }
+
++(CGFloat)heightWithAttributes:(NSDictionary*)attributes
+{
+    return [@"Test" sizeWithAttributes:attributes].height;
+}
 @end
+

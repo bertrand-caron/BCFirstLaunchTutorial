@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BCFadedInButton.h"
 
-@interface BCGuidedTourWindowController : NSWindowController
+@interface BCGuidedTourWindowController : NSWindowController <BCFadedInButtonDelegate>
 {
     NSMutableArray* titleArray;
     NSMutableArray* selectorArray;
@@ -16,6 +17,7 @@
 
 @property (strong) id delegate;
 @property NSString* logoString;
+@property NSDictionary* attributes;
 
 - (id)initWithWindow:(NSWindow *)window;
 -(id)initWithWindowNibName:(NSString *)windowNibName andLogo:(NSString*)logo;
