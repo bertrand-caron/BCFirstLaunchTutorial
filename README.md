@@ -44,3 +44,12 @@ Limitations
 -----------
 
 Currently, launching two tutorials at once will result in a painful duplication of all messages.
+
+Sub-Project
+-----------
+
+### BCFadedInButton
+
+![BCFadedInButton][1]
+
+  [1]: https://f.cloud.github.com/assets/4724439/1642091/4e97c550-5871-11e3-9bab-53a881462d39.gif
